@@ -1,0 +1,22 @@
+<%- include("partials/header") -%>
+
+    <h1>Home</h1>
+    <h5> <%= key_1 %> </h5>
+
+
+  <%  posts.forEach( function(post){ %>
+  <%    console.log(post.text_title); %>
+  <%  }); %>
+
+  <%  for (var i=0; i<posts.length; i++){ %>
+    <div style="margin-top: 50px">
+      <h2><%= posts[i].text_title %></h2>
+    </div>
+    <div >
+    <%  var res = posts[i].text_post.slice(0,100) + "..." ; %>
+    <h5><%= res %></h5>
+    <a href="posts/<%= posts[i].text_title %>">Raed more</a>
+    </div>
+  <%  } %>
+
+<%- include("partials/footer") -%>
